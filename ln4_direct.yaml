@@ -1,8 +1,8 @@
 payload:
-  - DOMAIN-SUFFIX,linux.do
-  - DOMAIN-SUFFIX,bemani.cc
-  - DOMAIN-SUFFIX,meta.appinn.net
-  - DOMAIN-SUFFIX,zaimanhua.com
-  - DOMAIN-SUFFIX,dmzj.com
-  - DOMAIN-SUFFIX,idmzj.com
-  - DOMAIN-SUFFIX,pcbeta.com
+  - '+,linux.do'
+  - '+,bemani.cc'
+  - '+,meta.appinn.net'
+  - '+,zaimanhua.com'
+  - '+,dmzj.com'
+  - '+,idmzj.com'
+  - '+,pcbeta.com'
