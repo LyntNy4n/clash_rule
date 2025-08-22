@@ -3,16 +3,16 @@ dns:
   ipv6: true
   prefer-h3: true
   enhanced-mode: fake-ip
+  cache-algorithm: arc
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-    - "geosite:connectivity-check"
-    - "geosite:private"
+    - "rule-set:fakeip-filter,trackerslist"
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
   proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://dns.twnic.tw/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
   direct-nameserver:
     - https://dns.alidns.com/dns-query#h3=true
     - https://doh.pub/dns-query
@@ -21,6 +21,24 @@ dns:
   nameserver:
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
+
+
+rule-providers:
+  fakeip-filter:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/fakeip-filter.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"
+    interval: 86400
+
+  trackerslist:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/trackerslist.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/trackerslist.mrs"
+    interval: 86400
 
 unified-delay: true
 tcp-concurrent: true
@@ -43,7 +61,6 @@ sniffer:
 geodata-mode: true
 geo-auto-update: true
 geo-update-interval: 24
-geodata-loader: standard
 geox-url:
   geoip: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat"
   geosite: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
