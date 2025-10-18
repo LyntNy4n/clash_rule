@@ -140,7 +140,7 @@ rule-providers:
 rules:
   - RULE-SET,ln4_direct,🔗 无需代理
   - RULE-SET,ln4_no_hk,次选节点
-  - RULE-SET,private,🔗 无需代理
+  - RULE-SET,private,🔗 无需代理,no-resolve
   - RULE-SET,applications,🔗 无需代理
   - RULE-SET,reject,🛡️ 广告拦截
   - RULE-SET,games-cn,🔗 无需代理
@@ -155,9 +155,8 @@ rules:
   - RULE-SET,proxy,✈️ 节点选择
   - RULE-SET,cn,🔗 无需代理
   - RULE-SET,privateip,🔗 无需代理,no-resolve
-  - RULE-SET,cnip,🔗 无需代理
-  - RULE-SET,mediaip,🌍 国外媒体
-  - RULE-SET,gamesip,🎮 国际游戏
+  - RULE-SET,cnip,🔗 无需代理,no-resolve
+  - RULE-SET,mediaip,🌍 国外媒体,no-resolve
+  - RULE-SET,gamesip,🎮 国际游戏,no-resolve
   - RULE-SET,telegramip,✈️ 节点选择,no-resolve
-  - DST-PORT,22,🔗 无需代理
   - MATCH,💠 容错规则
