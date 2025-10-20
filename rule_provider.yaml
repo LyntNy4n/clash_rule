@@ -3,7 +3,6 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    path: ./rules/fakeip-filter.mrs
     url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"
     interval: 86400
 
@@ -11,7 +10,6 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    path: ./rules/trackerslist.mrs
     url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/trackerslist.mrs"
     interval: 86400
 
@@ -140,7 +138,7 @@ rule-providers:
 rules:
   - RULE-SET,ln4_direct,🔗 无需代理
   - RULE-SET,ln4_no_hk,次选节点
-  - RULE-SET,private,🔗 无需代理,no-resolve
+  - RULE-SET,private,🔗 无需代理
   - RULE-SET,applications,🔗 无需代理
   - RULE-SET,reject,🛡️ 广告拦截
   - RULE-SET,games-cn,🔗 无需代理
